@@ -1,16 +1,28 @@
-export const App = () => {
-  return (
-    <div
-      style={{
-        height: '100vh',
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-        fontSize: 40,
-        color: '#010101'
-      }}
-    >
-      React homework template
-    </div>
-  );
+import React, { Component } from "react";
+import PhonebookForm from "./Rhonebook";
+
+ class App extends Component {  
+  state = {
+    contacts: [],
+    name: ''
+  }
+
+  handleSave = data => {   
+    this.setState({...data}
+      );  
+    console.log(data.name, data.number , this.state );
+    };
+
+  render() {
+
+    return (
+      <PhonebookForm
+      oNhandleSave = {this.handleSave}
+      />
+      
+         )  
+  }
+    
 };
+
+export default App;
