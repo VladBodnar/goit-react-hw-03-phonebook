@@ -16,7 +16,6 @@ import { nanoid } from 'nanoid'
       const {name, value} = e.currentTarget;
       this.setState({[name]: value}
       );
-      console.log(this.state.name);
       }
     render() {
       return ( <div>
