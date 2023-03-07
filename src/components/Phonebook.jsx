@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import { nanoid } from 'nanoid';
+import PropTypes from "prop-types";
+import css from "./Phonebook.module.css"
 
 class PhonebookForm extends Component {
   state = {
@@ -30,9 +32,9 @@ class PhonebookForm extends Component {
   };
   render() {
     return (
-      <div>
+      <div className={css.PhonebookContainer}>
         <label>
-          {' '}
+         
           Name
           <input
             type="text"
@@ -41,11 +43,12 @@ class PhonebookForm extends Component {
             title="Name may contain only letters, apostrophe, dash and spaces. For example Adrian, Jacob Mercer, Charles de Batz de Castelmore d'Artagnan"
             value={this.state.name}
             onChange={this.handleChange}
-            required
+            required 
+            className={css.nameInpput}
           />
         </label>
         <label>
-          {' '}
+         
           Number
           <input
             type="tel"
@@ -54,7 +57,8 @@ class PhonebookForm extends Component {
             title="Phone number must be digits and can contain spaces, dashes, parentheses and can start with +"
             value={this.state.number}
             onChange={this.handleChange}
-            required
+            required 
+            className={css.nameInpput}
           />
         </label>
         <button type="button" onClick={this.handleAdd}>
@@ -63,6 +67,15 @@ class PhonebookForm extends Component {
       </div>
     );
   }
+}
+
+PhonebookForm.propTypes = {
+  oNhandleSave: PropTypes.func,
+  contacts: PropTypes.arrayOf(PropTypes.exact({
+      number: PropTypes.string.isRequired,
+      name: PropTypes.string.isRequired,
+      id: PropTypes.string.isRequired,
+    })),
 }
 
 export default PhonebookForm;

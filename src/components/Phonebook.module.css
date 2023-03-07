@@ -1,0 +1,15 @@
+.PhonebookContainer {
+    display: block;
+    border: solid;    
+    width: 250px;
+    padding: 10px;
+  margin: 10px;
+  margin-left: 30px;
+}
+
+.nameInpput {
+    display: block;
+    margin-bottom: 10px;
+ 
+    
+}

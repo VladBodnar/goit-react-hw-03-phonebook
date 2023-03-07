@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
 import PhonebookForm from './Phonebook';
 import ContactList from './ContactList';
+import css from './App.module.css';
 import Filter from './Filter';
-// import { nanoid } from 'nanoid'
+
 
 class App extends Component {
   state = {
@@ -45,11 +46,11 @@ class App extends Component {
     const visibleContacts = this.getVisibleContacts();
     return (
       <div>
-        <h1>Phonebook</h1>
+        <h1 className={css.componentsName}>Phonebook</h1>
         <PhonebookForm oNhandleSave={this.handleSave} 
         contacts={contacts} />
 
-        <h2>Contacts</h2>
+        <h2 className={css.componentsName}>Contacts</h2>
         <Filter value={filter} onChange={this.changeFilter} />
         <ContactList
           contactsArray={visibleContacts}

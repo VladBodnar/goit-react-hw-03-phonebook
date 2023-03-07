@@ -1,0 +1,15 @@
+.contactList { 
+  width: 350px;
+  padding: 10px;
+  margin: 10px;
+  margin-left: 30px;
+}
+.contactItem {
+  display: block;
+
+  margin-bottom: 10px;
+}
+
+.contactItemCild {
+  margin-right: 10px;
+}
