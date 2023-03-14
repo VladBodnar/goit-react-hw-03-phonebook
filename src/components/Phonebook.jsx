@@ -11,7 +11,7 @@ class PhonebookForm extends Component {
   };
 
   handleAdd = e => {
-    if (this.props.contacts.find(contact => contact.name === this.state.name)) {
+    if (this.props.contacts.find(contact => contact.name === this.state.name) || this.state.name.length === 0) {
       alert(this.state.name + 'is alredy in contacts.');
     } else this.props.oNhandleSave(this.state);
     this.reset();
