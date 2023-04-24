@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
-import PhonebookForm from './Phonebook';
-import ContactList from './ContactList';
+import PhonebookForm from '../Phonebook/Phonebook';
+import ContactList from '../ContactList/ContactList';
 import css from './App.module.css';
-import Filter from './Filter';
-import contactsJson from './../dataBase/contactes.json';
+import Filter from '../Filter/Filter';
+import contactsJson from './../../dataBase/contactes.json';
 
 class App extends Component {
   state = {
@@ -19,8 +19,8 @@ class App extends Component {
 
   componentDidUpdate(prevPros, prevState) {
     if (
-      prevState.contacts.length !== 0 &&
-      prevState.contacts.length !== this.state.contacts.length
+      
+      prevState.contacts !== this.state.contacts
     ) {
       localStorage.setItem('contacts', JSON.stringify(this.state.contacts));
     }
@@ -72,3 +72,4 @@ class App extends Component {
 
 export default App;
 
+// prevState.contacts.length !== 0 &&
